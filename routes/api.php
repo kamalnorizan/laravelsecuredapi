@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::get('/getallusers', [UserController::class,'getallusers']);
+Route::get('/getuser/{user}', [UserController::class,'getuser']);
