@@ -18,7 +18,7 @@ class UserController extends Controller
             $user = User::find($user);
             throw_if(!$user, \Throwable::class);
         } catch (\Throwable $th) {
-            return response()->json(['message' => 'User not found'], 404);
+            return response()->json(['message' => 'User not found'], 400);
         }
         return response()->json($user);
 
