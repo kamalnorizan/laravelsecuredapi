@@ -80,3 +80,6 @@
     @yield('script')
 </body>
 </html>
+
+
+https://www.apachelounge.com/download/#google_vignette

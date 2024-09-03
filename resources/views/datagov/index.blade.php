@@ -30,15 +30,6 @@
                             <tbody>
 
                             </tbody>
-                            {{-- @foreach ($data as $rail)
-                                <tr>
-                                    <td>{{\Carbon\Carbon::parse($rail['date'])->format('d-m-Y')}}</td>
-                                    <td>{{ $rail['rail_lrt_kj'] }}</td>
-                                    <td>{{ $rail['rail_monorail'] }}</td>
-                                    <td>{{ $rail['rail_lrt_ampang'] }}</td>
-                                    <td>{{ $rail['rail_mrt_kajang'] }}</td>
-                                </tr>
-                            @endforeach --}}
                         </table>
 
                     </div>
@@ -54,8 +45,9 @@
             e.preventDefault();
             loadData();
         });
-        
+
         loadData();
+
         function loadData(){
             $.ajax({
                 type: "post",
