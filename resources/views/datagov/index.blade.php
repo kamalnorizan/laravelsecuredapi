@@ -11,6 +11,17 @@
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-group {{ $errors->has('date_end') ? ' has-error' : '' }}">
+                    <label for="date_end">Tarikh Akhir</label>
+                    <input type="date" id="date_end" name="date_end" class="form-control" required>
+                    <small class="text-danger">{{ $errors->first('date_end') }}</small>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -46,6 +57,11 @@
             loadData();
         });
 
+        $('#date_end').change(function (e) {
+            e.preventDefault();
+            loadData();
+        });
+
         loadData();
 
         function loadData(){
@@ -55,7 +71,7 @@
                 data: {
                     _token: "{{csrf_token()}}",
                     date_start: $('#date_start').val(),
-                    date_end: "2025-12-31"
+                    date_end: $('#date_end').val()
                 },
                 dataType: "json",
                 success: function (response) {
