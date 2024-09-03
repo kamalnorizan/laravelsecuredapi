@@ -9,3 +9,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/datagov', [App\Http\Controllers\DataGovController::class, 'index'])->name('datagov');
+
