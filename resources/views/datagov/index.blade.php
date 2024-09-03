@@ -16,7 +16,7 @@
             <div class="col-md-8">
                 <div class="form-group {{ $errors->has('date_end') ? ' has-error' : '' }}">
                     <label for="date_end">Tarikh Akhir</label>
-                    <input type="date" id="date_end" name="date_end" class="form-control" required>
+                    <input type="date" id="date_end" name="date_end" class="form-control" value="{{ now()->format('Y-m-d') }}" required>
                     <small class="text-danger">{{ $errors->first('date_end') }}</small>
                 </div>
             </div>

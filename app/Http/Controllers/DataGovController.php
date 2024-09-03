@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DataGovController extends Controller
 {
@@ -39,10 +40,10 @@ class DataGovController extends Controller
 
     function ajaxLoadDataRail(Request $request)
     {
+        // use curl
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            // CURLOPT_URL => 'https://api.data.gov.my/data-catalogue?id=ridership_headline&date_start=' . $request->date_start . '@date&date_end=' . $request->date_end . '@date',
             CURLOPT_URL => 'https://api.data.gov.my/data-catalogue?id=ridership_headline&date_start=' . $request->date_start . '@date&date_end=' . $request->date_end . '@date',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
@@ -60,7 +61,24 @@ class DataGovController extends Controller
 
         curl_close($curl);
         $data = json_decode($response, true);
-        // dd($data);
+
+        // use guzzle
+        // $client = new Client();
+        // $headers = [
+        //     'Cookie' => '__cf_bm=5RBGxeptIGEA3jatqmDxyMrx7cyexUf71D7CvGCxmBg-1725347257-1.0.1.1-lms2dwVnNg2Tngc5v7uEMCSNI5QgzA8EbgglLFkYQOfAOBBXUiYP0ZVmlYVkJa3uFHgxpr6yWIb.gcoB.nhDhA'
+        // ];
+
+        // $response = $client->request('GET', 'https://api.data.gov.my/data-catalogue', [
+        //     'headers'=>$headers,
+        //     'query' => [
+        //         'id' => 'ridership_headline',
+        //         'date_start' => $request->date_start . '@date',
+        //         'date_end' => date('Y-m-d') . '@date'
+        //     ]
+        // ]);
+
+        // $data = json_decode($response->getBody());
+
         return response()->json($data);
 
     }
