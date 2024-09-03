@@ -14,7 +14,11 @@ class AuthApiController extends Controller
             $user = Auth::user();
             switch($system){
                 case 'gcais':
-                    $token = $user->createToken('Sistem GCAIS')->accessToken;
+                    if(Auth::user()->id < 5){
+                        $token = $user->createToken('Sistem GCAIS', ['get-posts'])->accessToken;
+                    }else{
+                        $token = $user->createToken('Sistem GCAIS')->accessToken;
+                    }
                     break;
                 case 'ekereta':
                     $token = $user->createToken('eKereta')->accessToken;
