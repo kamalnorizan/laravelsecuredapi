@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "002f9ca5-9156-4bab-a84a-a950aded36ee",
+		"name": "LaravelSecuredAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "432329"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getProfile",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNWFiMzY5MmI2NjhiZTAxMzg5YmY3YmQwZTNjYWUxMDA2YTU2MWUxMWMwMzhhMTE4MDYxMWNmY2RjNDQxYjgzYmIyODk3ZWI0ZGNkZTQ4NTQiLCJpYXQiOjE3MjUzMzMzMTUuNzQ1ODY5LCJuYmYiOjE3MjUzMzMzMTUuNzQ1ODcyLCJleHAiOjE3NTY4NjkzMTUuNzM0MzU4LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.Yt9WeqPwFGcm9H3OsxB0EpFF3nEE4nzBFZS30AenRwUAUtCSzMVKKcLuaIv7X8SqUINbaM-DNTMDFhYn6HOSLf9WPUuP8uFCFNDoBaBq2KumNl_qkgxdjZSdu2u0yauwlVG8lVCcq2ZCSj7WOA-O4U5l0c2irokmk3wXCGexYTQk_ymp3UHrm2xEriVX9v0f7tZmkq3l0HAQou0l9qsH10-ydi9Yw37tafNJ0DyyXuG0vPK29kHDkixM6liMCAo2ND0it9SyIDQsJLm09OHcr2xBk9xtHXxndxBndWwOTKevzuBgSzHmveWgk8nvAefUm0TcX2Ld7SiabspNz7Zx_-iyZlgqBbiy92weM7liZEGx0J5sES3gEQ4pfdqfHuhq8nYvB7ZiEPkE0o-NePC4nAimumfypO7JvZKo8WIg5z9BXYKY6YKUosseznG29ie-71JSqwTfxKc0scvzNpPBHvcWvK73TMjJXMHf-i1jffMFpvmA8WUFJLax44Oomytg42aNkYOPC8f6ny8lD7yt0AquoWfwdPsMXy_eOzKVoYSC4Qgthwbk6UbNPC3_blP_BYrO1PhqqJdWnTaEt23f-evCGSpiB6qiXrkL-p2mhvRMPrlXvlNJT803vPMscWWIM5hiziSMkhuVkUZ_kIjI4h-1NxucvfMu9qscnXaN0qA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://laravelsecuredapi.test/api/getprofile",
+					"protocol": "http",
+					"host": [
+						"laravelsecuredapi",
+						"test"
+					],
+					"path": [
+						"api",
+						"getprofile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "marquardt.phoebe@example.org",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "system",
+							"value": "gcais",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://laravelsecuredapi.test/api/login",
+					"protocol": "http",
+					"host": [
+						"laravelsecuredapi",
+						"test"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
