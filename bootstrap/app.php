@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
+            'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

@@ -16,6 +16,9 @@ class AuthApiController extends Controller
                 case 'gcais':
                     $token = $user->createToken('Sistem GCAIS')->accessToken;
                     break;
+                case 'ekereta':
+                    $token = $user->createToken('eKereta')->accessToken;
+                    break;
                 default:
                     $token = $user->createToken('Laravel Personal Access Client')->accessToken;
             }

@@ -20,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
+        Passport::tokensCan([
+            'get-posts' => 'Get Posts',
+        ]);
     }
 }
