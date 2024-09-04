@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
             'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+            'client' =>  \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
