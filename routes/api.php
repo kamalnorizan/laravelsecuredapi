@@ -11,9 +11,9 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::post('/login', [AuthApiController::class,'login']);
-
+Route::get('/getallusers', [UserController::class,'getallusers']);
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('/getallusers', [UserController::class,'getallusers']);
+    
     Route::get('/getuser/{user}', [UserController::class,'getuser']);
     Route::get('/getprofile', [UserController::class,'getProfile']);
 });
