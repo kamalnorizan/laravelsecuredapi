@@ -9,11 +9,6 @@ class DataGovController extends Controller
 {
     public function index()
     {
-
-
-
-
-
         return view('datagov.index');
     }
 
@@ -40,7 +35,10 @@ class DataGovController extends Controller
         // curl_close($curl);
         // $data = json_decode($response, true);
 
-        $client = new Client();
+        $client = new Client([
+            'verify' => false,
+        ]);
+
         $headers = [
             'Cookie' => '__cf_bm=5RBGxeptIGEA3jatqmDxyMrx7cyexUf71D7CvGCxmBg-1725347257-1.0.1.1-lms2dwVnNg2Tngc5v7uEMCSNI5QgzA8EbgglLFkYQOfAOBBXUiYP0ZVmlYVkJa3uFHgxpr6yWIb.gcoB.nhDhA'
         ];
@@ -49,8 +47,8 @@ class DataGovController extends Controller
             'headers'=>$headers,
             'query' => [
                 'id' => 'ridership_headline',
-                'date_start' => '2021-01-01@date',
-                'date_end' => '2021-01-31@date'
+                'date_start' => $request->date_start.'@date',
+                'date_end' => date('Y-m-d').'@date'
             ]
         ]);
 
