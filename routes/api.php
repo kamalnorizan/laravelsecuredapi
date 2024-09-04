@@ -19,6 +19,7 @@ Route::middleware('client')->group(function () {
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/getuser/{user}', [UserController::class,'getuser']);
     Route::get('/getprofile', [UserController::class,'getProfile']);
+    Route::post('/logout', [UserController::class,'logout']);
 });
 
 Route::get('/post', [PostController::class,'index'])->middleware(['auth:api','scope:get-posts']);

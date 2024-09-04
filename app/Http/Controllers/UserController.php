@@ -29,4 +29,20 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json($user);
     }
+
+    function logout(Request $request){
+
+        if($request->has('revokeAll') && $request->revokeAll == true){
+            $user = Auth::user();
+            $user->tokens->each(function ($token, $key) {
+                $token->revoke();
+            });
+        }else{
+            $user = Auth::user();
+            $accessToken = $user->token();
+            $accessToken->revoke();
+        }
+
+        return response()->json(['message' => 'Successfully logged out']);
+    }
 }
